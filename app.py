@@ -55,7 +55,7 @@ def dupeCheck():
     id_receive = request.args.get('id_give')
     user = db.user.find_one({'id' : id_receive })
 
-    if(user is not None):
+    if(user is None):
         return jsonify({'result': 'success'})
     else:
         return jsonify({'result': 'fail'})
